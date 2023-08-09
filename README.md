@@ -9,20 +9,9 @@ BAT Ransomware is a meticulously developed ransomware simulation that showcases 
 
 
 
+![image](https://github.com/Greejith-k/RANSOMWARE/assets/109193983/1c504bfa-15a8-404f-bfd0-76502b38bd15)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/Greejith-k/RANSOMWARE/assets/109193983/0a7b827d-8d2d-4b17-b65d-211b6bfd9f80)
 
 
 
