@@ -1,13 +1,3 @@
-
-####CREATOR#####
-
-## NAME : GREEJITH -K ######
-## GMAIL : greejithmiui12@gmail.com ###
-
-
-
-
-
 import os
 import subprocess
 import sys
